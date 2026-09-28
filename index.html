@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfólio de Carlos Wagner de Oliveira — Administração, Análise e Desenvolvimento de Sistemas, Controladoria, Finanças e Engenharia de Software.">
+<meta name="theme-color" content="#0b0d12">
+<title>Carlos Wagner de Oliveira | Portfólio</title>
+<style>
+:root{
+  --bg:#07090d; --panel:#0e121a; --panel2:#121824; --text:#f5f7fb; --muted:#aab3c2;
+  --line:#202838; --accent:#f5c542; --accent2:#7c5cff; --ok:#35d07f;
+  --max:1160px; --shadow:0 20px 70px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:
+radial-gradient(circle at 80% 0%,rgba(124,92,255,.16),transparent 32rem),
+radial-gradient(circle at 10% 20%,rgba(245,197,66,.09),transparent 28rem),var(--bg);
+color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(7,9,13,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:24px;color:#c7ceda;font-size:.92rem}
+.nav-links a:hover{color:#fff}
+.hero{padding:105px 0 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;padding:7px 12px;border:1px solid #343c4c;border-radius:999px;color:#dbe1eb;background:#0e121a;font-size:.82rem;margin-bottom:22px}
+h1{font-size:clamp(2.7rem,7vw,5.7rem);line-height:.98;letter-spacing:-.065em;margin-bottom:25px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:720px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:700}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn.secondary{background:#10151f}
+.hero-card{background:linear-gradient(145deg,#151b28,#0c1017);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow)}
+.hero-card .mark{width:82px;height:82px;border-radius:24px;background:linear-gradient(135deg,var(--accent),#ffec9a);display:grid;place-items:center;color:#111;font-size:2rem;font-weight:900;margin-bottom:28px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.stat{padding:15px;background:#0b0f16;border:1px solid #202838;border-radius:15px}.stat strong{display:block;font-size:1.35rem}.stat span{color:var(--muted);font-size:.78rem}
+section{padding:82px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.section-head h2{font-size:2rem;letter-spacing:-.04em}.section-head p{color:var(--muted);max-width:620px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:rgba(14,18,26,.86);border:1px solid var(--line);border-radius:22px;padding:28px}
+.panel p{color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.tag{padding:7px 10px;border-radius:9px;background:#171d28;border:1px solid #293244;color:#dce2ec;font-size:.82rem}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:22px;transition:.25s}
+.project:hover{transform:translateY(-4px);border-color:#3a465b}
+.project-media{height:245px;background:#090c12;display:grid;grid-template-columns:1fr 1fr;gap:4px;overflow:hidden}
+.project-media img{width:100%;height:100%;object-fit:cover}
+.project-media.single{grid-template-columns:1fr}.project-media.single img{object-fit:contain;padding:35px}
+.project-body{padding:24px}.project-body h3{font-size:1.35rem;margin-bottom:8px}.project-body p{color:var(--muted);font-size:.94rem}
+.project-meta{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}.project-meta span{font-size:.75rem;color:#cdd5e1;border:1px solid #2a3445;padding:5px 8px;border-radius:8px}
+.project-link{color:var(--accent);font-weight:700;font-size:.88rem}
+.timeline{display:grid;gap:14px}.timeline-item{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline-item:last-child{border-bottom:0}.timeline-item strong{color:var(--accent)}.timeline-item p{color:var(--muted)}
+.cta{background:linear-gradient(135deg,#151a27,#0d1119);border:1px solid var(--line);border-radius:28px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{font-size:2rem}.cta p{color:var(--muted);margin-top:7px}
+footer{padding:35px 0 50px;color:#7f8999;font-size:.85rem;border-top:1px solid var(--line);margin-top:80px}
+@media(max-width:850px){.hero,.about,.projects{grid-template-columns:1fr}.hero{padding-top:75px}.nav-links{display:none}.timeline-item{grid-template-columns:1fr}.cta{display:block}.cta .actions{margin-top:20px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#inicio">CW<span>.</span></a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#competencias">Competências</a><a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<main id="inicio">
+<section class="hero container">
+  <div>
+    <span class="eyebrow">PORTFÓLIO • SISTEMAS • NEGÓCIOS</span>
+    <h1>Transformo problemas de negócio em <em>soluções digitais.</em></h1>
+    <p>Analista de sistemas e administrador, com foco em desenvolvimento de software, gestão, controladoria, finanças e automação de processos.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn secondary" href="#contato">Entrar em contato</a>
+    </div>
+  </div>
+  <aside class="hero-card">
+    <div class="mark">CW</div>
+    <h2>Perfil profissional</h2>
+    <p style="color:var(--muted);margin-top:8px">Administração + Análise e Desenvolvimento de Sistemas, conectando tecnologia com visão de processos e negócios.</p>
+    <div class="stats">
+      <div class="stat"><strong>5+</strong><span>projetos</span></div>
+      <div class="stat"><strong>Web</strong><span>e sistemas</span></div>
+      <div class="stat"><strong>Dados</strong><span>e processos</span></div>
+    </div>
+  </aside>
+</section>
+
+<section id="sobre">
+<div class="container">
+  <div class="section-head"><div><h2>Sobre mim</h2></div><p>Uma apresentação objetiva para recrutadores, clientes e conexões profissionais.</p></div>
+  <div class="about">
+    <div class="panel">
+      <p>Minha formação combina <strong>Administração</strong> e <strong>Análise e Desenvolvimento de Sistemas</strong>, com especializações voltadas a <strong>Controladoria e Finanças</strong> e <strong>Engenharia de Software</strong>.</p>
+      <p style="margin-top:15px">Nos projetos, busco unir modelagem de processos, experiência do usuário, programação, banco de dados e regras de negócio para criar sistemas que sejam úteis na operação real.</p>
+    </div>
+    <div class="panel" id="competencias">
+      <h3>Competências e tecnologias</h3>
+      <div class="skills">
+        <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+        <span class="tag">Flask</span><span class="tag">Pygame</span><span class="tag">SQLite</span>
+        <span class="tag">Supabase</span><span class="tag">SQL</span><span class="tag">OFX</span>
+        <span class="tag">UML</span><span class="tag">Scrum / Kanban</span><span class="tag">LGPD</span>
+        <span class="tag">Finanças</span><span class="tag">ERP</span><span class="tag">Automação</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projetos">
+<div class="container">
+  <div class="section-head"><div><h2>Projetos selecionados</h2></div><p>Projetos desenvolvidos para praticar e aplicar programação, arquitetura, dados, processos e regras de negócio.</p></div>
+  <div class="projects">
+
+    <article class="project">
+      <div class="project-media"><img src="assets/erp_fin1.jpg" alt="Tela financeira do ERP"><img src="assets/erp_fin2.jpg" alt="Tela de conciliação financeira"></div>
+      <div class="project-body">
+        <h3>ERP Locadoras</h3>
+        <p>Plataforma para gestão de locadora de veículos, evoluída com módulos financeiro, contratos e fiscal.</p>
+        <div class="project-meta"><span>Flask</span><span>SQLite</span><span>HTML/JS</span><span>OFX</span><span>ERP</span></div>
+        <a class="project-link" href="#contato">Conhecer projeto →</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media"><img src="assets/erp_ct1.jpg" alt="Tela de contratos do ERP"><img src="assets/erp_ct2.jpg" alt="Tela de contratos do ERP"></div>
+      <div class="project-body">
+        <h3>Financeiro, Contratos e Fiscal</h3>
+        <p>Extensão do ERP com importação e conciliação OFX, classificação de lançamentos, faturas de contratos e rotinas fiscais.</p>
+        <div class="project-meta"><span>OFX 1.x/2.x</span><span>DRE</span><span>LALUR</span><span>Flask</span><span>JavaScript</span></div>
+        <a class="project-link" href="#contato">Ver detalhes →</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media"><img src="assets/perere_bg.png" alt="Interface do PERERE.py"><img src="assets/perere_logo.png" alt="Logo do PERERE.py"></div>
+      <div class="project-body">
+        <h3>PERERE.py — Perguntar e Responder Ponto Py</h3>
+        <p>Aplicação educacional gamificada para aprendizado de lógica de programação, com desafios, shorts, fórum, perfil e pontuação.</p>
+        <div class="project-meta"><span>JavaScript</span><span>HTML/CSS</span><span>SPA</span><span>Gamificação</span></div>
+        <a class="project-link" href="#contato">Conhecer projeto →</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media single"><img src="assets/dinamite.png" alt="Dinamite Racha"></div>
+      <div class="project-body">
+        <h3>Dinamite Racha</h3>
+        <p>Jogo desenvolvido em Python/Pygame com menu, fases, adversários, colisões, sons, tempo e ranking persistido em banco de dados.</p>
+        <div class="project-meta"><span>Python</span><span>Pygame</span><span>SQLite</span><span>POO</span></div>
+        <a class="project-link" href="#contato">Conhecer projeto →</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media single" style="padding:0 70px"><img src="assets/lgpd_sender.html" alt="Projeto LGPD Sender"></div>
+      <div class="project-body">
+        <h3>LGPD Sender</h3>
+        <p>Projeto web voltado a conteúdos e documentos de privacidade, com página de acesso e materiais relacionados à LGPD.</p>
+        <div class="project-meta"><span>HTML</span><span>Web</span><span>LGPD</span><span>Privacidade</span></div>
+        <a class="project-link" href="#contato">Conhecer projeto →</a>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><div><h2>Como trabalho</h2></div><p>Da necessidade de negócio até uma solução funcional e organizada.</p></div>
+  <div class="panel timeline">
+    <div class="timeline-item"><strong>01 • Entender</strong><p>Mapeamento do problema, usuários, regras de negócio e objetivos do sistema.</p></div>
+    <div class="timeline-item"><strong>02 • Modelar</strong><p>Estruturação de dados, módulos, fluxos, telas e responsabilidades.</p></div>
+    <div class="timeline-item"><strong>03 • Desenvolver</strong><p>Implementação incremental com foco em código organizado, persistência e experiência de uso.</p></div>
+    <div class="timeline-item"><strong>04 • Evoluir</strong><p>Testes, correções, novas funcionalidades e adaptação do sistema às necessidades do negócio.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="contato">
+<div class="container">
+  <div class="cta">
+    <div><h2>Vamos conversar?</h2><p>Use esta página como apresentação profissional e adicione seus links reais de LinkedIn, GitHub e contato.</p></div>
+    <div class="actions">
+      <!-- Substitua os # pelos seus links -->
+      <a class="btn primary" href="#">LinkedIn</a>
+      <a class="btn secondary" href="#">GitHub</a>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">© 2026 Carlos Wagner de Oliveira • Portfólio profissional • Desenvolvido em HTML, CSS e JavaScript.</div>
+</footer>
+</body>
+</html>
