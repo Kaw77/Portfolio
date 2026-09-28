@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia LGPD - Baixe seu PDF</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #6A5ACD;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #483D8B;
+    }
+    #response {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📘 Receba seu Guia LGPD</h2>
+
+  <form id="pdfForm">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="tel" name="telefone" id="telefone" required>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <button type="submit">Enviar e Receber PDF</button>
+  </form>
+
+  <div id="response"></div>
+
+  <br>
+  <a href="https://kaw77.github.io/politicadepriv/" target="_blank">Política de Privacidade</a> |
+  <a href="https://kaw77.github.io/declaracaodeprivacidade/" target="_blank">Declaração de Privacidade</a>
+
+  <footer>
+    <p>Ao clicar em <strong>"Enviar e Receber PDF"</strong>, você concorda com nossa Política de Privacidade e Declaração de Privacidade.</p><br>
+     <p>Cogite verificar também sua caixa de SPAM.</p>
+  </footer>
+
+  <script>
+    document.getElementById('pdfForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const responseDiv = document.getElementById('response');
+
+      responseDiv.innerHTML = '<p>⏳ Enviando...</p>';
+
+      try {
+        const response = await fetch(
+          'https://script.google.com/macros/s/AKfycbz4e5SzIAHHCDCBoOd21iDJwqMZrR0knhizvcI9zOV3P7tSo1FyxZ5dc4j01gbYQqc/exec', // 🔗 Troque pela URL do Apps Script
+          {
+            method: 'POST',
+            body: new URLSearchParams(formData),
+            redirect: 'follow'
+          }
+        );
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+          responseDiv.innerHTML = '<p style="color:green;">✅ PDF enviado! Verifique seu e-mail.</p>';
+          e.target.reset();
+        } else {
+          throw new Error(result.message || "Erro desconhecido");
+        }
+      } catch (error) {
+        responseDiv.innerHTML = `<p style="color:red;">❌ Erro: ${error.message}</p>`;
+        console.error("Detalhes do erro:", error);
+      }
+    });
+  </script>
+
+</body>
+</html>
